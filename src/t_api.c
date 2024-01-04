@@ -25,7 +25,6 @@
  * file for complete information.
  */
 
-
 #include <assert.h>
 #ifdef HAVE_STDINT_H
 #include <stdint.h>
@@ -40,7 +39,7 @@
 
 #include "units.h"
 
-int test_iperf_set_test_bind_port(struct iperf_test *test)
+int test_iperf_set_test_bind_port(struct iperf_test* test)
 {
     int port;
     port = iperf_get_test_bind_port(test);
@@ -50,7 +49,7 @@ int test_iperf_set_test_bind_port(struct iperf_test *test)
     return 0;
 }
 
-int test_iperf_set_mss(struct iperf_test *test)
+int test_iperf_set_mss(struct iperf_test* test)
 {
     int mss = iperf_get_test_mss(test);
     iperf_set_test_mss(test, 535);
@@ -59,11 +58,10 @@ int test_iperf_set_mss(struct iperf_test *test)
     return 0;
 }
 
-int
-main(int argc, char **argv)
+int main(int argc, char** argv)
 {
-    const char *ver;
-    struct iperf_test *test;
+    const char* ver;
+    struct iperf_test* test;
     int sint, gint;
 
     ver = iperf_get_iperf_version();
@@ -84,8 +82,7 @@ main(int argc, char **argv)
 
     ret += test_iperf_set_mss(test);
 
-    if (ret < 0)
-    {
+    if (ret < 0) {
         return -1;
     }
     return 0;
